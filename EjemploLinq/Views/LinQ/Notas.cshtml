@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EjemploLinq.Models.Ejemplo>
+
+@{
+    ViewBag.Title = "Notas";
+}
+
+<h2>Notas</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 jumbotron">
+            <form action="/" method="post">
+                <div class="form-group>
+                    <input type="text" name="txtbuscar" value="" class="form-control" placeholder=" Digite nombre de la materia" autocomplete="off" />
+                </div>
+                <input type="submit" class="btn btn-info btn-lg" name="btn" value="BUSCAR" class="form-control" placeholder="Buscar Nombre" autocomplete="off" />
+            </form>
+            <div>
+            </div>
+            <div class="col-lg-8 col-sm-offset-2 jumbotron">
+                <p>Resultados</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Carnet </th>
+                            <th>Nombre </th>
+                            <th>Materia </th>
+                            <th>Promedio </th>
+                            <th>Estado </th>
+                            <th> Fecha </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.carnet </td>
+                                <td>@item.nombre </td>
+                                <td>@item.materia </td>
+                                <td>@item.promedio </td>
+                                <td>pendiente</td>
+                                <td>@item.fecha </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
